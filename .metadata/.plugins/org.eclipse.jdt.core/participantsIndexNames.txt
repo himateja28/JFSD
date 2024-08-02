@@ -1,5 +1,0 @@
-INDEX VERSION 1.134
-D:\JFSD\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2885449860.index
-\01_HIBERNATE38\src\main\java
-D:\JFSD\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2856799576.index
-\01_HIBERNATE38\src\main\java
