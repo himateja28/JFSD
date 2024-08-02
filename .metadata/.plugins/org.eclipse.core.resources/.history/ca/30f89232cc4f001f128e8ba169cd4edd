@@ -1,0 +1,6 @@
+package model;
+
+public class RegularEmployee {
+	double salary;
+	int bonus;
+}

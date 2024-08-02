@@ -1,0 +1,6 @@
+package model;
+
+public class ContractEmployee {
+	double payperhour;
+	String duration;
+}
