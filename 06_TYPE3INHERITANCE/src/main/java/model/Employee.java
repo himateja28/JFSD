@@ -8,7 +8,7 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="type3employee")7
+@Table(name="type3employee")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Employee {
 	@Id

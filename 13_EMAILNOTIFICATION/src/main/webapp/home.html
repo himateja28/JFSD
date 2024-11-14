@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Send Mail</title>
+</head>
+<body>
+	<div>
+		<input type="text" placeholder="Enter to mail address" id="tomail">
+		<input type="text" placeholder="Enter subject" id="sub"> 
+		<input type="text" placeholder="Enter message" id="mess"> 
+		<button onclick="sendMail()">Send Mail</button>
+	</div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+
+function sendMail()
+{
+	var data = JSON.stringify({
+		toemail:tomail.value,
+		subject:sub.value,
+		message:mess.value
+	});
+	
+	var url = "http://localhost:8080/email/send";
+	callApi("GET",url,data,mailHandler);
+	console.log(data);
+}
+
+function  mailHandler(res) {
+	alert(res)
+}
+
+</script>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="online quiz"
+  id="myeclipse.1350657432046"
+  context-root="/online quiz"
+  j2ee-spec="5.0"
+  archive="online quiz.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

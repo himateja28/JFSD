@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pagination</title>
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body onload="loadData(1)">
+	<div id="content"></div>
+	<div id="footer"></div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+	var pageSelected = 1;
+	function loadData(cPage) {
+		pageSelected = cPage;
+		
+		var pageurl = "http://localhost:8080/student/getpaging/15";
+		callApi("GET", pageurl, "", loadPages);
+		
+		var dataurl = "http://localhost:8080/student/getstudents/"+ cPage +"/15";
+		callApi("GET", dataurl, "", generateTable)
+	}
+		
+	function loadPages(res){
+		var data = JSON.parse(res);
+		var pages = "";
+		for(var x in data){
+			//pages += data[x];
+			pages += `<label class="${pageSelected==data[x]? "paging-selected" : "paging"}" onclick="loadData('${data[x]}')">${data[x]}</label>`;
+		}
+		footer.innerHTML = pages;
+	}
+	
+	function generateTable(res) {
+		var data = JSON.parse(res);
+		var tbl = `<table class="tbl">
+						<tr>
+							<th>Roll No</th>
+							<th>Student Name</th>
+							<th>Department</th>
+						</tr>`;
+		for(var x in data){
+			tbl += `<tr>
+						<td>${data[x].rollno}</td>
+						<td>${data[x].name}</td>
+						<td>${data[x].dept}</td>
+					</tr>`;
+		}
+		tbl += `</table>`;
+		content.innerHTML = tbl;
+	}
+</script>
+</html>
